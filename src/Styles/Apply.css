@@ -1,19 +1,7 @@
-.apply-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    gap: 700px;
-    align-items: center;
-    width: 100%;
-    background-color: #ffffff;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
   
   .apply-content {
     width: 77vw;
-    margin: 120px;
+    margin-left: 80px;
     padding: 30px;
     align-items: center;
   }
