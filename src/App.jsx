@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
 import JoinWithUs from "./Pages/JoinWithUs";
+import JobDetails from "./Pages/JobDetails";
 import Apply from "./Pages/Apply";
 
 const AppContent = () => {
