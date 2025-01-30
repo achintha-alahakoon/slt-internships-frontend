@@ -5,7 +5,6 @@ import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
 import JoinWithUs from "./Pages/JoinWithUs";
-import JobDetails from "./Pages/JobDetails";
 import Apply from "./Pages/Apply";
 
 const AppContent = () => {
@@ -21,7 +20,6 @@ const AppContent = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/join-with-us" element={<JoinWithUs />} />
-        <Route path="/job-details" element={<JobDetails />} />
         <Route path="/apply" element={<Apply />} />
       </Routes>
     </div>
