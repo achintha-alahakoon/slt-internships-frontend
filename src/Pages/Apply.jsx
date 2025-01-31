@@ -32,13 +32,16 @@ const Apply = () => {
 
     const uploadData = new FormData();
     uploadData.append("cv", formData.resume);
-    uploadData.append("name", `${formData.firstName} ${formData.lastName}`);
-    uploadData.append("email", formData.email);
+    uploadData.append("firstName", formData.firstName);
+    uploadData.append("lastName", formData.lastName);
     uploadData.append("phone", formData.phone);
+    uploadData.append("placeOfResidence", formData.location);
+    uploadData.append("messageToHR", formData.message);
+    uploadData.append("confirmEmail", formData.confirmEmail);
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/applicants/upload",
+        "http://localhost:8080/applicants/upload",
         uploadData,
         {
           headers: {
