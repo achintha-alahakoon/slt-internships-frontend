@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserHeader from "./Components/UserHeader";
 import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
@@ -8,7 +8,6 @@ import JoinWithUs from "./Pages/JoinWithUs";
 import Apply from "./Pages/Apply";
 
 const AppContent = () => {
-  const location = useLocation();
 
   return (
     <div>
