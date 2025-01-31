@@ -7,9 +7,31 @@
 }
 
 .appBar.scrolled {
-  color: #000 !important;
   background-color: #fff !important;
   box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1) !important;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: 60px;
+}
+
+.tabs-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 40px;
+  margin-right: 20px;
 }
 
 .active-tab {
@@ -27,6 +49,3 @@ button.MuiButton-root {
   font-size: 1rem;
   transition: color 0.3s ease-in-out;
 }
- 
-  
-  

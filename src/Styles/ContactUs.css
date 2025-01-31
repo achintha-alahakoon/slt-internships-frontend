@@ -4,12 +4,12 @@
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    width: 100vw;
-    background-color: #f0f4f8; /* Light blue background for the outer container */
-    padding-top: 150px; /* Adjust this value based on your menu bar height */
+    width: 99vw;
+    background-color: #f0f4f8;
+    padding-top: 150px;
   }
   
-  .container {
+  .contact-us-container {
     font-family: Arial, sans-serif;
     padding: 30px;
     max-width: 1000px;
@@ -18,8 +18,8 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Center horizontally */
-    flex: 1; /* Allow the container to stretch */
+    margin: 0 auto;
+    flex: 1;
   }
   
   .header {
@@ -106,16 +106,14 @@
   .emergency-list {
     margin-left: 20px;
     color: #333;
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
+    list-style-type: none;
+    padding: 0;
   }
-  
-  .footer-container {
-    width: 100%;
-    background-color: #0047AB; /* Dark blue background for the footer */
-    color: #fff; /* White text color for the footer */
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
+
+  .contact-us-footer-container {
+    height: 60vh;
+    background-color: #2d2d7f;
+    color: #fff;
+    padding: 40px 50px;
+    width: 93%;
   }

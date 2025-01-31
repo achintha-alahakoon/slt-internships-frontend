@@ -5,17 +5,14 @@ import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
 import JoinWithUs from "./Pages/JoinWithUs";
-import JobDetails from "./Pages/JobDetails";
 import Apply from "./Pages/Apply";
 
 const AppContent = () => {
   const location = useLocation();
 
-  const noHeaderPaths = ["/job-details", "/apply"];
-
   return (
     <div>
-      {!noHeaderPaths.includes(location.pathname) && <UserHeader />}
+    <UserHeader />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />

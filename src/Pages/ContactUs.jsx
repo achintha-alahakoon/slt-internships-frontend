@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 const ContactUs = () => {
   return (
     <div className="outerContainer">
-      <div className="container">
+      <div className="contact-us-container">
         {/* Header Section */}
         <h1 className="header">Contact Us</h1>
         <p className="intro-text">
@@ -65,7 +65,7 @@ const ContactUs = () => {
       </div>
 
       {/* Footer Section */}
-      <div className="footer-container">
+      <div className="contact-us-footer-container">
         <Footer />
       </div>
     </div>

@@ -16,18 +16,11 @@ const UserHeader = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -38,79 +31,33 @@ const UserHeader = () => {
     setActiveTab(newValue);
   };
 
+  // Check if Home tab is active and not scrolled
+  const isHomeActive = activeTab === "/" && !scrolled;
+  const textColor = isHomeActive ? "white" : "black";
+
   return (
     <AppBar className={`appBar ${scrolled ? "scrolled" : ""}`}>
-      <Toolbar
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <Toolbar className="toolbar">
         {/* Logo Section */}
         <Box>
-          <img
-            src={Logo}
-            alt="Logo"
-            style={{ width: "150px", height: "60px" }}
-          />
+          <img src={Logo} alt="Logo" className="logo" />
         </Box>
 
         {/* Navigation Tabs */}
-        <Box style={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
-          <Tabs
-            value={activeTab}
-            onChange={handleChange}
-            textColor="primary"
-            indicatorColor="primary"
-          >
-            <Tab
-              label="Home"
-              value="/"
-              component={Link}
-              to="/"
-              style={{ fontWeight: activeTab === "/" ? "bold" : "normal",
-                color: activeTab === "/" ? "#1450A3" : "black",
-               }}
-            />
-            <Tab
-              label="About Us"
-              value="/about-us"
-              component={Link}
-              to="/about-us"
-              style={{
-                fontWeight: activeTab === "/about-us" ? "bold" : "normal",
-                color: activeTab === "/about-us" ? "#1450A3" : "black",
-              }}
-            />
-            <Tab
-              label="Join With Us"
-              value="/join-with-us"
-              component={Link}
-              to="/join-with-us"
-              style={{
-                fontWeight: activeTab === "/join-with-us" ? "bold" : "normal",
-                color: activeTab === "/join-with-us" ? "#1450A3" : "black",
-              }}
-            />
-            <Tab
-              label="Contact Us"
-              value="/contact-us"
-              component={Link}
-              to="/contact-us"
-              style={{
-                fontWeight: activeTab === "/contact-us" ? "bold" : "normal",
-                color: activeTab === "/contact-us" ? "#1450A3" : "black",
-              }}
-            />
+        <Box className="tabs-container">
+          <Tabs value={activeTab} onChange={handleChange} textColor="primary" indicatorColor="primary">
+            <Tab label="Home" value="/" component={Link} to="/" style={{ fontWeight: activeTab === "/" ? "bold" : "normal", color: textColor }} />
+            <Tab label="About Us" value="/about-us" component={Link} to="/about-us" style={{ fontWeight: activeTab === "/about-us" ? "bold" : "normal", color: activeTab === "/about-us" ? "#1450A3" : textColor }} />
+            <Tab label="Join With Us" value="/join-with-us" component={Link} to="/join-with-us" style={{ fontWeight: activeTab === "/join-with-us" ? "bold" : "normal", color: activeTab === "/join-with-us" ? "#1450A3" : textColor }} />
+            <Tab label="Contact Us" value="/contact-us" component={Link} to="/contact-us" style={{ fontWeight: activeTab === "/contact-us" ? "bold" : "normal", color: activeTab === "/contact-us" ? "#1450A3" : textColor }} />
           </Tabs>
         </Box>
 
         {/* Social Icons */}
-        <Box style={{ display: "flex", gap: "40px", marginRight: "20px" }}>
-          <FacebookOutlined style={{ fontSize: "26px", cursor: "pointer" }} />
-          <InstagramOutlined style={{ fontSize: "26px", cursor: "pointer" }} />
-          <XOutlined style={{ fontSize: "26px", cursor: "pointer" }} />
+        <Box className="social-icons">
+          <FacebookOutlined style={{ fontSize: "26px", cursor: "pointer", color: textColor }} />
+          <InstagramOutlined style={{ fontSize: "26px", cursor: "pointer", color: textColor }} />
+          <XOutlined style={{ fontSize: "26px", cursor: "pointer", color: textColor }} />
         </Box>
       </Toolbar>
     </AppBar>
